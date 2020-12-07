@@ -1,38 +1,24 @@
-import React from 'react';
-import './App.css';
-import './style.css'
-import imagetest from '.\ImageTest.jpg'
-import ReactPlayer from 'react-player'
+import "./App.css";
+import "./style/style.css"
+import imageInSrc from "./image/ImageTest.jpg"
+import reactjsVideo from "./video/HD Epic Sax Gandalf.mp4"
 
 function App() {
   return (
-    <div className="style">
-    <h1 className="title red">My name is here</h1>
-    <br/>
-    <img src={process.env.PUBLIC_URL + 'public\ImageTest.jpg'} alt="Logo"/>
-    <br/>
-    <img src={imagetest} alt="Image"/>
-    <br/>
-
-    </div>);
-
-}
-class Video extends Component {
-  render () {
-      return (
-      <div className='player-wrapper'>
-          <ReactPlayer
-          className='react-player fixed-bottom'
-          url= '.\HD Epic Sax Gandalf.mp4'
-          width='320'
-          height='240'
-          controls = {true}
-
-          />
+    <>
+      <div style={{border:"solid 1px black",maxWidth:"100vw"}}>
+        <h1 class="title red">Souheil Kooli</h1>
+        <br/>
+        <img src={imageInSrc} alt="imageinsrc"/>
+        <br/>
+        <img src="/image/ImageTest.jpg" alt="imageinpublic" />
       </div>
-      )
-  }
+
+      <video width="320" height="240" controls>
+        <source src={reactjsVideo} type="video/mp4" />
+      </video>
+    </>
+  );
 }
 
-export default Video;
 export default App;
